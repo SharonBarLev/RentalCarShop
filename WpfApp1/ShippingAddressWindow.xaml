@@ -1,0 +1,145 @@
+﻿<Window x:Class="WpfApp1.ShippingAddressWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:WpfApp1" 
+        Title="Shipping Addresses Manager" 
+        Height="650" 
+        Width="900" 
+        Background="#FF0F172A" 
+        WindowStartupLocation="CenterScreen" 
+        FontFamily="Segoe UI">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="240"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Shipping Addresses Manager" Foreground="#F8FAFC" FontSize="22" FontWeight="Bold" Margin="0,0,0,15" Grid.Row="0"/>
+
+            <DataGrid x:Name="ShippingGrid" Grid.Row="1" AutoGenerateColumns="False" Background="#1E293B" 
+                      RowBackground="#1E293B" AlternatingRowBackground="#1E293B" Foreground="White"
+                      BorderBrush="#334155" HorizontalGridLinesBrush="#334155" VerticalGridLinesBrush="#334155"
+                      SelectionChanged="ShippingGrid_SelectionChanged" GridLinesVisibility="Horizontal" IsReadOnly="True"
+                      ColumnWidth="*">
+                <DataGrid.Resources>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#0F172A"/>
+                        <Setter Property="Foreground" Value="#94A3B8"/>
+                        <Setter Property="FontWeight" Value="SemiBold"/>
+                        <Setter Property="Padding" Value="10,8"/>
+                        <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                        <Setter Property="BorderBrush" Value="#334155"/>
+                    </Style>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="Padding" Value="10"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="DataGridCell">
+                                    <Border Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}">
+                                        <ContentPresenter VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Username" Binding="{Binding MyUsername}" Width="1.5*"/>
+                    <DataGridTextColumn Header="Country/Region" Binding="{Binding MyCountryRegion}" Width="1.5*"/>
+                    <DataGridTextColumn Header="City" Binding="{Binding MyCity}" Width="1.2*"/>
+                    <DataGridTextColumn Header="Street Address" Binding="{Binding MyStreetAddress}" Width="2*"/>
+                    <DataGridTextColumn Header="Floor" Binding="{Binding MyFloor}" Width="0.8*"/>
+                    <DataGridTextColumn Header="Zip Code" Binding="{Binding MyZipCode}" Width="1*"/>
+                    <DataGridTextColumn Header="Additional Instructions" Binding="{Binding MyAdditionalInstructions}" Width="3*"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <Border Grid.Row="2" Background="#1E293B" BorderBrush="#334155" BorderThickness="1" Padding="20" CornerRadius="8" Margin="0,20,0,0" VerticalAlignment="Top">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5,0,5,15">
+                        <TextBlock Text="Target Username (Update/Del):" Foreground="#F59E0B" FontWeight="Bold" VerticalAlignment="Center" Margin="0,0,10,0" FontSize="13"/>
+                        <TextBox x:Name="TxtTargetUsername" Width="180" Height="32" Background="#334155" BorderBrush="#475569" Foreground="White" FontWeight="Bold" Padding="6,4" VerticalAlignment="Center"/>
+                        <TextBlock Text="* Unique identifier for the shipping profile" Foreground="#64748B" FontSize="11" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" Margin="5,6">
+                        <TextBlock Text="Country / Region" Foreground="#94A3B8" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="TxtCountryRegion" Height="32" Background="#FF1E293B" Foreground="White" BorderBrush="#FF334155" Padding="6,4"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,6">
+                        <TextBlock Text="City" Foreground="#94A3B8" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="TxtCity" Height="32" Background="#FF1E293B" Foreground="White" BorderBrush="#FF334155" Padding="6,4"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="0" Margin="5,6">
+                        <TextBlock Text="Street Address" Foreground="#94A3B8" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="TxtStreetAddress" Height="32" Background="#FF1E293B" Foreground="White" BorderBrush="#FF334155" Padding="6,4"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="2" Grid.Column="1" Margin="5,6">
+                        <TextBlock Text="Floor / Apartment" Foreground="#94A3B8" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="TxtFloor" Height="32" Background="#FF1E293B" Foreground="White" BorderBrush="#FF334155" Padding="6,4"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" Grid.Column="0" Margin="5,6">
+                        <TextBlock Text="Zip Code" Foreground="#94A3B8" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="TxtZipCode" Height="32" Background="#FF1E293B" Foreground="White" BorderBrush="#FF334155" Padding="6,4"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="3" Grid.Column="1" Margin="5,6">
+                        <TextBlock Text="Additional Instructions" Foreground="#94A3B8" FontSize="12" Margin="0,0,0,4"/>
+                        <TextBox x:Name="TxtAdditionalInstructions" Height="32" Background="#FF1E293B" Foreground="White" BorderBrush="#FF334155" Padding="6,4"/>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="4" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
+                        <Button x:Name="BtnAdd" Content="Add Address" Width="120" Height="38" Margin="6" Background="#10B981" Foreground="White" FontWeight="Bold" BorderThickness="0" Click="BtnAdd_Click" Cursor="Hand">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button x:Name="BtnUpdate" Content="Update" Width="120" Height="38" Margin="6" Background="#2563EB" Foreground="White" FontWeight="Bold" BorderThickness="0" Click="BtnUpdate_Click" Cursor="Hand">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button x:Name="BtnDelete" Content="Delete" Width="120" Height="38" Margin="6" Background="#EF4444" Foreground="White" FontWeight="Bold" BorderThickness="0" Click="BtnDelete_Click" Cursor="Hand">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                        <Button x:Name="BtnClear" Content="Clear" Width="90" Height="38" Margin="6" Background="#475569" Foreground="White" FontWeight="SemiBold" BorderThickness="0" Click="BtnClear_Click" Cursor="Hand">
+                            <Button.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </Button.Resources>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+</Window>

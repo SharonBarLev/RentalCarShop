@@ -1,0 +1,107 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarShop", "CarShop\CarShop.csproj", "{5AD2B94C-4276-4DEF-9778-A3D8F4A64490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfServiceCarShop", "WcfServiceCarShop\WcfServiceCarShop.csproj", "{B89B4D80-1F70-4953-B531-10B00D10EC53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessModelCarShop", "ClassLibrary1\BusinessModelCarShop.csproj", "{A5EDCC23-BE61-4A00-A6FF-BD5B29F04D2C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModelCarShop", "ClassLibrary2\ViewModelCarShop.csproj", "{E3EE7929-E267-4F89-9C67-77D6FAD9DB4B}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Web", "Web\", "{0C859AE2-325F-479F-AA0D-C0D1E5599614}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B89B4D80-1F70-4953-B531-10B00D10EC53} = {B89B4D80-1F70-4953-B531-10B00D10EC53}
+	EndProjectSection
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		ProjectReferences = "{a5edcc23-be61-4a00-a6ff-bd5b29f04d2c}|ClassLibrary1.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_55538"
+		Debug.AspNetCompiler.PhysicalPath = "Web\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55538\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_55538"
+		Release.AspNetCompiler.PhysicalPath = "Web\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_55538\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "55538"
+		SlnRelativePath = "Web\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{2BB2163D-4AB6-41AE-8FC5-52BE113753F4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B89B4D80-1F70-4953-B531-10B00D10EC53} = {B89B4D80-1F70-4953-B531-10B00D10EC53}
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "visa", "visa\", "{5719C147-E902-401C-BFB8-357B6CAA2BB4}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53701"
+		Debug.AspNetCompiler.PhysicalPath = "visa\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53701\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53701"
+		Release.AspNetCompiler.PhysicalPath = "visa\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53701\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53701"
+		SlnRelativePath = "visa\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AD2B94C-4276-4DEF-9778-A3D8F4A64490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AD2B94C-4276-4DEF-9778-A3D8F4A64490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AD2B94C-4276-4DEF-9778-A3D8F4A64490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AD2B94C-4276-4DEF-9778-A3D8F4A64490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89B4D80-1F70-4953-B531-10B00D10EC53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89B4D80-1F70-4953-B531-10B00D10EC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89B4D80-1F70-4953-B531-10B00D10EC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89B4D80-1F70-4953-B531-10B00D10EC53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5EDCC23-BE61-4A00-A6FF-BD5B29F04D2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5EDCC23-BE61-4A00-A6FF-BD5B29F04D2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5EDCC23-BE61-4A00-A6FF-BD5B29F04D2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5EDCC23-BE61-4A00-A6FF-BD5B29F04D2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3EE7929-E267-4F89-9C67-77D6FAD9DB4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3EE7929-E267-4F89-9C67-77D6FAD9DB4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3EE7929-E267-4F89-9C67-77D6FAD9DB4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3EE7929-E267-4F89-9C67-77D6FAD9DB4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C859AE2-325F-479F-AA0D-C0D1E5599614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C859AE2-325F-479F-AA0D-C0D1E5599614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C859AE2-325F-479F-AA0D-C0D1E5599614}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C859AE2-325F-479F-AA0D-C0D1E5599614}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{2BB2163D-4AB6-41AE-8FC5-52BE113753F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB2163D-4AB6-41AE-8FC5-52BE113753F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB2163D-4AB6-41AE-8FC5-52BE113753F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB2163D-4AB6-41AE-8FC5-52BE113753F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5719C147-E902-401C-BFB8-357B6CAA2BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5719C147-E902-401C-BFB8-357B6CAA2BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5719C147-E902-401C-BFB8-357B6CAA2BB4}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{5719C147-E902-401C-BFB8-357B6CAA2BB4}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {789ABA05-0286-452F-BA02-BE40DC693B42}
+	EndGlobalSection
+EndGlobal
+

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="UpdateTotal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="visa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="money" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTotalResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="isValidMoney">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="visa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="money" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isValidMoneyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isValidMoneyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isCardExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="visa" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="holdername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="securitycode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="month" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="year" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isCardExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isCardExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="UpdateTotalSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTotal" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTotalSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTotalResponse" />
+  </wsdl:message>
+  <wsdl:message name="isValidMoneySoapIn">
+    <wsdl:part name="parameters" element="tns:isValidMoney" />
+  </wsdl:message>
+  <wsdl:message name="isValidMoneySoapOut">
+    <wsdl:part name="parameters" element="tns:isValidMoneyResponse" />
+  </wsdl:message>
+  <wsdl:message name="isCardExistSoapIn">
+    <wsdl:part name="parameters" element="tns:isCardExist" />
+  </wsdl:message>
+  <wsdl:message name="isCardExistSoapOut">
+    <wsdl:part name="parameters" element="tns:isCardExistResponse" />
+  </wsdl:message>
+  <wsdl:portType name="VisaWebServiceSoap">
+    <wsdl:operation name="UpdateTotal">
+      <wsdl:input message="tns:UpdateTotalSoapIn" />
+      <wsdl:output message="tns:UpdateTotalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isValidMoney">
+      <wsdl:input message="tns:isValidMoneySoapIn" />
+      <wsdl:output message="tns:isValidMoneySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isCardExist">
+      <wsdl:input message="tns:isCardExistSoapIn" />
+      <wsdl:output message="tns:isCardExistSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="VisaWebServiceSoap" type="tns:VisaWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateTotal">
+      <soap:operation soapAction="http://tempuri.org/UpdateTotal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidMoney">
+      <soap:operation soapAction="http://tempuri.org/isValidMoney" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCardExist">
+      <soap:operation soapAction="http://tempuri.org/isCardExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="VisaWebServiceSoap12" type="tns:VisaWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateTotal">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTotal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidMoney">
+      <soap12:operation soapAction="http://tempuri.org/isValidMoney" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCardExist">
+      <soap12:operation soapAction="http://tempuri.org/isCardExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="VisaWebService">
+    <wsdl:port name="VisaWebServiceSoap" binding="tns:VisaWebServiceSoap">
+      <soap:address location="http://localhost:53701/visa.asmx" />
+    </wsdl:port>
+    <wsdl:port name="VisaWebServiceSoap12" binding="tns:VisaWebServiceSoap12">
+      <soap12:address location="http://localhost:53701/visa.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
