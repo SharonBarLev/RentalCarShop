@@ -71,13 +71,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Brand.cs" />
     <Compile Include="Branch.cs" />
+    <Compile Include="Brand.cs" />
     <Compile Include="Car.cs" />
     <Compile Include="CarOrder.cs" />
     <Compile Include="CarReview.cs" />
-    <Compile Include="CarUser.cs" />
     <Compile Include="Cart.cs" />
+    <Compile Include="CarUser.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="Contact.cs" />
     <Compile Include="Favorite.cs" />

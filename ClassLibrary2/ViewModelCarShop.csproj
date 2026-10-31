@@ -71,13 +71,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BrandDB.cs" />
     <Compile Include="BranchDB.cs" />
+    <Compile Include="BrandDB.cs" />
     <Compile Include="CarDB.cs" />
     <Compile Include="CarOrderDB.cs" />
     <Compile Include="CarReviewDB.cs" />
-    <Compile Include="CarUserDB.cs" />
     <Compile Include="CartDB.cs" />
+    <Compile Include="CarUserDB.cs" />
     <Compile Include="CategoryDB.cs" />
     <Compile Include="ContactDB.cs" />
     <Compile Include="DBfunction.cs" />
@@ -91,7 +91,7 @@
     <Compile Include="UserDB.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\CarShop.accdb">
+    <Content Include="App_Data\HardwareStore.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Rotativa\help-wkhtmltoimage.txt" />
